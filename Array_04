@@ -1,0 +1,45 @@
+//Contains Duplicate in an array
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int num;
+    cin >> num;
+    
+    int arr[num];
+    
+    for(int i = 0; i < num; i++)
+    {
+        cin >> arr[i];
+    }
+    
+    bool foundDuplicate = false;
+    for(int i = 0; i < num; i++)
+    {
+        //start the inner loop from i+1
+        for(int j = i + 1; j < num; j++) 
+        {
+            if(arr[i] == arr[j])
+            {
+                cout << "True";
+                foundDuplicate = true;
+                break;
+            }
+        }
+        //break out of outer loop if duplicate found
+        if(foundDuplicate) 
+        {
+            break;
+        }
+    }
+    
+    //check if duplicate was not found
+    if(!foundDuplicate) 
+    {
+        cout << "False";
+    }
+    
+    return 0;
+}
+//coded by khushi
